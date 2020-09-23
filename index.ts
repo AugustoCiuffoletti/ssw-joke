@@ -3,7 +3,7 @@ import './style.css';
 
 const promise = new Promise((resolve, reject) => {
   const request = new XMLHttpRequest(); 
-  request.open('GET', 'https://api.icndb.com/jokes/random'); // Definisce la request
+  request.open('GET', 'https://api.chucknorris.io/jokes/random'); // Definisce la request
   request.onload = () => {	         // Definisce il callback al response
     if (request.status === 200) {        // successo, concludo con la resolve
       resolve(request.response);         // la response passa al primo callback del then
@@ -14,9 +14,9 @@ const promise = new Promise((resolve, reject) => {
 } );
 console.log('Request inviata');
 promise.then(
-  (data) => {        // primo callback, successo
+  (data: string) => {        // primo callback, successo
     console.log('Got data! Promise fulfilled.');
-    document.getElementById("demo").innerHTML = JSON.parse(data).value.joke; }, 
+    document.getElementById("demo").innerHTML = JSON.parse(data).value; }, 
   (error) => {       //secondo callback, fallimento (come .catch)
     console.log('Promise rejected.');
     console.log(error.message); } );
