@@ -14,7 +14,7 @@ const promise = new Promise((resolve, reject) => {
 } );
 console.log('Request inviata');
 promise.then(
-  (data: string) => {        // primo callback, successo
+  (data) => {        // primo callback, successo
     console.log('Got data! Promise fulfilled.');
     document.getElementById("demo").innerHTML = JSON.parse(data).value; }, 
   (error) => {       //secondo callback, fallimento (come .catch)
