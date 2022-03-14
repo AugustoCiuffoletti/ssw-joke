@@ -3,7 +3,7 @@ import './style.css';
 
 const promise = new Promise((resolve, reject) => {
   const request = new XMLHttpRequest(); 
-  request.open('GET', 'https://api.chucknorris.io/jokes/random'); // Definisce la request
+  request.open('GET', 'https://api.chucknorris.io/jokes/random',false); // Definisce la request
   request.onload = () => {	         // Definisce il callback al response
     if (request.status === 200) {        // successo, concludo con la resolve
       resolve(request.response);         // la response passa al primo callback del then
